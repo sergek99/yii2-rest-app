@@ -6,7 +6,7 @@ use \yii\db\ActiveRecord;
 use yii\helpers\Json;
 
 /**
- * @author Kondaurov
+ * @author Kozulyaev
  */
 class JsonColumn extends \yii\base\Behavior
 {

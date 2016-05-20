@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Kondaurov
+ * @author Kozulyaev
  */
 namespace restApp\modules\rest\controllers\category;
 use restApp\modules\rest\components\SgmRestController;

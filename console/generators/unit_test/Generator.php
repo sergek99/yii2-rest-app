@@ -4,7 +4,7 @@ use yii\base\UnknownClassException;
 use yii\gii\CodeFile;
 
 /**
- * @author Kondaurov
+ * @author Kozulyaev
  * @property string unitTestClassName;
  */
 class Generator extends \yii\gii\Generator

@@ -12,7 +12,7 @@ use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
 
 /**
- * @author Kondaurov
+ * @author Kozulyaev
  */
 class UsersController extends AppRestController
 {

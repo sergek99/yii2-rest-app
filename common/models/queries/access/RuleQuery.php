@@ -2,7 +2,7 @@
 
 namespace common\models\queries\access;
 /**
- *  @author Kondaurov
+ *  @author Kozulyaev
  */
 
 class RuleQuery extends \yii\db\ActiveQuery

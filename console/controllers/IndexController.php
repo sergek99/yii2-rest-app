@@ -6,7 +6,7 @@ use common\models\elastic\ProductMapping;
 use yii\helpers\Console;
 
 /**
- * @author Kondaurov
+ * @author Kozulyaev
  */
 class IndexController extends \yii\console\Controller
 {

@@ -3,7 +3,7 @@ namespace common\components\rest;
 
 use yii\web\Response;
 /**
- *  @author Kondaurov
+ *  @author Kozulyaev
  */
 class RestController extends \yii\rest\Controller
 {

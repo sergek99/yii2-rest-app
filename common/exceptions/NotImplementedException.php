@@ -1,7 +1,7 @@
 <?php
 namespace common\exceptions;
 /**
- *  @author Kondaurov
+ *  @author Kozulyaev
  */
 class NotImplementedException extends \yii\web\HttpException
 {

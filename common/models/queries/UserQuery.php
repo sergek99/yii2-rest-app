@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Kondaurov
+ * @author Kozulyaev
  */
 
 namespace common\models\queries;
