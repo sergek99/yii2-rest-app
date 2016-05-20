@@ -1,0 +1,292 @@
+.h-popup-item-mini {
+	display: none;
+	position: relative;
+	background: #fff;
+	border: 2px solid #ebeced;
+	background: rgba(255,255,255,0.9);
+	border-radius: 10px;
+	padding: 15px;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 50%;
+		margin-left: -8px;
+		width: 16px;
+		height: 10px;
+		.sprite(0,0);
+		top: -10px;
+	}
+}
+
+.h-center {
+	max-width: 1950px;
+	margin: 0 auto;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.h-wrapper {
+	min-height: 100%;
+	margin-bottom: -112px;
+
+	&:after {
+		height: 112px;
+		display: block;
+		width: 100%;
+		content: "";
+		clear: both;
+	}
+}
+
+.h-button-green {
+	background: #4DCD70;
+	text-transform: uppercase;
+	text-align: center;
+	transition: background 0.5s;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		background: #23AA48;
+	}
+}
+
+.h-button-grey {
+	background: #bbbbbb;
+	text-transform: uppercase;
+	text-align: center;
+	transition: background 0.5s;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		background: #9f9f9f;
+	}
+}
+
+.h-button-dark {
+	background: #696969;
+	text-transform: uppercase;
+	text-align: center;
+	transition: background 0.5s;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		background: #292929;
+	}
+}
+
+.h-button-red {
+	background: #FF475A;
+	text-transform: uppercase;
+	text-align: center;
+	transition: background 0.5s;
+	text-decoration: none;
+	border-radius: 5px;
+	cursor: pointer;
+
+	&:hover {
+		background: #D32737;
+	}
+}
+
+.h-offset {
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+.h-modern-radio {
+	.fake-radio {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		border: 2px solid #ebeced;
+		border-radius: 5px;
+		background: #fff;
+		display: block;
+		cursor: pointer;
+		float: left;
+		margin-right: 10px;
+	}
+
+	.custom-checkbox {
+		line-height: 24px;
+		cursor: pointer;
+
+		.checked {
+			width: 24px;
+			height: 24px;
+			border: none;
+			.sprite(0, 58px);
+		}
+	}
+}
+
+.h-modern-checkbox {
+	position: relative;
+
+	.fake-checkbox {
+		width: 17px;
+		height: 17px;
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		margin-right: 3px;
+		overflow: hidden;
+	}
+
+	.custom-checkbox {
+		cursor: pointer;
+		padding-right: 25px;
+
+		.checked {
+			.sprite(41px, 32px);
+		}
+	}
+}
+
+.h-modern-radio-two {
+	position: relative;
+
+	.fake-checkbox {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		border: 2px solid #ebeced;
+		border-radius: 5px;
+		background: #fff;
+		display: block;
+		cursor: pointer;
+		float: left;
+		margin-right: 10px;
+	}
+
+	.custom-checkbox {
+		line-height: 24px;
+		cursor: pointer;
+
+		.checked {
+			width: 24px;
+			height: 24px;
+			border: none;
+			.sprite(0, 58px);
+		}
+	}
+}
+
+.h-modern-input {
+	padding: 10px 15px;
+	border: 2px solid #ebeced;
+	border-radius: 10px;
+	background: #fff;
+	.font(13px, 16px, #595959, Lato);
+	display: block;
+}
+
+.h-modern-textarea {
+	padding: 10px 15px;
+	border: 2px solid #ebeced;
+	border-radius: 10px;
+	background: #fff;
+	.font(13px, 16px, #595959, Lato);
+	display: block;
+}
+
+.h-modern-select {
+
+	.fake-select {
+		cursor: pointer;
+		position: relative;
+
+		.current-item {
+			cursor: pointer;
+			padding: 10px 25px 10px 15px;
+			border: 2px solid #ebeced;
+			border-radius: 10px;
+			background: #fff;
+			.font(13px, 16px, #595959, Lato);
+			position: relative;
+
+			&:before {
+				.sprite(61px, 48px);
+				display: block;
+				width: 9px;
+				height: 6px;
+				content: "";
+				position: absolute;
+				right: 19px;
+				top: 50%;
+				margin-top: -2px;
+			}
+		}
+		.show-select {
+			&:before {
+				background: none;
+			}
+		}
+	}
+
+	.down-list {
+		border: 2px solid #ebeced;
+		border-radius: 5px;
+		background: #fff;
+		.font(13px, 16px, #595959, Lato);
+		position: absolute;
+		width: 100%;
+		left: -2px;
+		z-index: 2;
+		overflow: hidden;
+
+		.down-list-item {
+			padding: 5px 10px;
+			cursor: pointer;
+			transition: background 0.3s;
+
+			&:hover {
+				background: #ebeced;
+			}
+
+			&:last-child {
+				border-radius: 0 0 5px 5px;
+			}
+
+			&:first-child {
+				border-radius: 5px 5px 0 0 ;
+			}
+		}
+
+
+	}
+}
+
+.js-add-scroll {
+	.scroll-bar {
+		background: #F0F0F0;
+		width: 7px;
+		z-index: 2;
+
+		.thumb {
+			background: #2bd0fe;
+			cursor: pointer;
+		}
+	}
+}
+
+.js-tabs-content {
+	.js-tab-item {
+		display: none;
+
+		&:first-child {
+			display: block;
+		}
+	}
+}
+

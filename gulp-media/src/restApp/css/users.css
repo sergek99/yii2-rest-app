@@ -1,0 +1,18 @@
+.user__sort, .user__filter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rules__add, .roles__add, .role__add_rule, .role__add_parent {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rules__list-not-found {
+    font-size: 14px;
+}
+
+.table th {
+    font-weight: bold;
+}
+

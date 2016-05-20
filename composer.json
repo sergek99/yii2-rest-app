@@ -1,0 +1,35 @@
+{
+  "require": {
+    "yiisoft/yii2": "2.0.6",
+    "yiisoft/yii2-debug": "~2.0",
+    "index0h/yii2-log": "^0.0.3",
+    "yiisoft/yii2-composer": "^2.0",
+    "bower-asset/jqtree": "1.1.0",
+    "bower-asset/angular": "^1.4",
+    "bower-asset/angular-ui-router": "^0.2.15",
+    "bower-asset/angular-resource": "^1.4",
+    "bower-asset/angular-ui-sortable": "^0.13.4",
+    "bower-asset/angular-file-upload": "^2.1.4",
+    "bower-asset/angular-cookies": "^1.4.7",
+    "bower-asset/jquery-ui": "^1.11",
+    "bower-asset/textAngular": "^1.4.6",
+    "bower-asset/ckeditor": "^4.5.4",
+    "bower-asset/angular-md5": "^0.1.8",
+    "bower-asset/angular-ui-grid": "~3.0.7",
+    "bower-asset/ngstorage": "0.3.10",
+    "bower-asset/angular-ui-bootstrap-bower": "^1.1",
+    "bower-asset/ng-infinite-scroller-origin": "^1.2",
+    "bower-asset/angular-i18n": "^1.5",
+    "bower-asset/sip.js": "^0.7.4",
+    "bower-asset/eonasdan-bootstrap-datetimepicker": "^4.17"
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  },
+  "require-dev": {
+    "yiisoft/yii2-codeception": "^2.0"
+  }
+}

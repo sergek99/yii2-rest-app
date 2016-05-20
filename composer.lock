@@ -1,0 +1,1436 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2207359d607195b62ff253d2fe90f519",
+    "content-hash": "1371311436b0b5ad4d6fdb1b12a0b46e",
+    "packages": [
+        {
+            "name": "bower-asset/angular",
+            "version": "v1.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular.git",
+                "reference": "57f5cd80e00507766e01ca75a8b42c0456219666"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular/zipball/57f5cd80e00507766e01ca75a8b42c0456219666",
+                "reference": "57f5cd80e00507766e01ca75a8b42c0456219666",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./angular.js",
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-cookies",
+            "version": "v1.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular-cookies.git",
+                "reference": "840353b6f95fb0ebeb93655593c93e8a41dd1324"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular-cookies/zipball/840353b6f95fb0ebeb93655593c93e8a41dd1324",
+                "reference": "840353b6f95fb0ebeb93655593c93e8a41dd1324",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": "1.4.10"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./angular-cookies.js",
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-file-upload",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nervgh/angular-file-upload.git",
+                "reference": "c19105008e00c6f0fb92ed837982e0f0ace6e003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nervgh/angular-file-upload/zipball/c19105008e00c6f0fb92ed837982e0f0ace6e003",
+                "reference": "c19105008e00c6f0fb92ed837982e0f0ace6e003",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.1.5,<2.0.0"
+            },
+            "require-dev": {
+                "bower-asset/es5-shim": ">=3.4.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/angular-file-upload.min.js",
+                "bower-asset-ignore": [
+                    "examples"
+                ]
+            },
+            "keywords": [
+                "angular",
+                "file",
+                "module",
+                "upload"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-i18n",
+            "version": "v1.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular-i18n.git",
+                "reference": "da621f3feea5a658edc1ae0fdd8ed68888363082"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular-i18n/zipball/da621f3feea5a658edc1ae0fdd8ed68888363082",
+                "reference": "da621f3feea5a658edc1ae0fdd8ed68888363082",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "components",
+                    "precommit.sh"
+                ]
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-md5",
+            "version": "v0.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gdi2290/angular-md5.git",
+                "reference": "f0c5d61f92a807b4d3a0b2be98890d8948e03fe7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gdi2290/angular-md5/zipball/f0c5d61f92a807b4d3a0b2be98890d8948e03fe7",
+                "reference": "f0c5d61f92a807b4d3a0b2be98890d8948e03fe7",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": "*"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "angular-md5.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "*.yml",
+                    "*.xml",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "description": "A md5 crypto component for Angular.js",
+            "keywords": [
+                "PatrickJS",
+                "angular",
+                "angular.js",
+                "angularjs",
+                "crypto",
+                "gdi2290",
+                "md5"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-resource",
+            "version": "v1.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular-resource.git",
+                "reference": "61a0f4f468ee6edcdc6c7e3d356b819fea34bacb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular-resource/zipball/61a0f4f468ee6edcdc6c7e3d356b819fea34bacb",
+                "reference": "61a0f4f468ee6edcdc6c7e3d356b819fea34bacb",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": "1.4.10"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./angular-resource.js",
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-ui-bootstrap-bower",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular-ui/bootstrap-bower.git",
+                "reference": "03d320ace541313e16bb493ef8d6ff2323ab9ef9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular-ui/bootstrap-bower/zipball/03d320ace541313e16bb493ef8d6ff2323ab9ef9",
+                "reference": "03d320ace541313e16bb493ef8d6ff2323ab9ef9",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.4.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./ui-bootstrap-tpls.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Native AngularJS (Angular) directives for Bootstrap.",
+            "keywords": [
+                "angular",
+                "angular-ui",
+                "bootstrap"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-ui-grid",
+            "version": "v3.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular-ui/bower-ui-grid.git",
+                "reference": "944b927c0f824b27d8d3a2ba4c43175e4f440e0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular-ui/bower-ui-grid/zipball/944b927c0f824b27d8d3a2ba4c43175e4f440e0b",
+                "reference": "944b927c0f824b27d8d3a2ba4c43175e4f440e0b",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.2.16,1.4.x"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./less",
+                    "./ui-grid.css",
+                    "./ui-grid.eot",
+                    "./ui-grid.js",
+                    "./ui-grid.svg",
+                    "./ui-grid.ttf",
+                    "./ui-grid.woff"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A data grid for Angular",
+            "keywords": [
+                "angular",
+                "angularjs",
+                "data grid",
+                "grid",
+                "kogrid",
+                "ng-grid",
+                "nggrid",
+                "slickgrid",
+                "ui grid",
+                "ui-grid"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-ui-router",
+            "version": "0.2.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular-ui/angular-ui-router-bower.git",
+                "reference": "2b8d5241b4c631ca2aef079bb96690b213eff449"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular-ui/angular-ui-router-bower/zipball/2b8d5241b4c631ca2aef079bb96690b213eff449",
+                "reference": "2b8d5241b4c631ca2aef079bb96690b213eff449",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.0.8,<2.0.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./release/angular-ui-router.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "component.json",
+                    "package.json",
+                    "lib",
+                    "config",
+                    "sample",
+                    "test",
+                    "tests",
+                    "ngdoc_assets",
+                    "Gruntfile.js",
+                    "files.js"
+                ]
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-ui-sortable",
+            "version": "v0.13.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular-ui/ui-sortable.git",
+                "reference": "0311efe8c8f0771b7f02d56e3a9dc675dcaa8d4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular-ui/ui-sortable/zipball/0311efe8c8f0771b7f02d56e3a9dc675dcaa8d4f",
+                "reference": "0311efe8c8f0771b7f02d56e3a9dc675dcaa8d4f",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.2.0",
+                "bower-asset/jquery-ui": ">=1.9"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./sortable.js"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/bootstrap",
+            "version": "v3.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "less/bootstrap.less",
+                    "dist/js/bootstrap.js"
+                ],
+                "bower-asset-ignore": [
+                    "/.*",
+                    "_config.yml",
+                    "CNAME",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "docs",
+                    "js/tests",
+                    "test-infra"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "js",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ]
+        },
+        {
+            "name": "bower-asset/ckeditor",
+            "version": "4.5.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ckeditor/ckeditor-releases.git",
+                "reference": "e3d4dba95343f1b33d8d9a08b78cd080efa0cdc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/e3d4dba95343f1b33d8d9a08b78cd080efa0cdc1",
+                "reference": "e3d4dba95343f1b33d8d9a08b78cd080efa0cdc1",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./ckeditor.js"
+            },
+            "license": [
+                "For licensing, see LICENSE.md or http://ckeditor.com/license."
+            ],
+            "description": "JavaScript WYSIWYG web text editor.",
+            "keywords": [
+                "ckeditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ]
+        },
+        {
+            "name": "bower-asset/eonasdan-bootstrap-datetimepicker",
+            "version": "4.17.37",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Eonasdan/bootstrap-datetimepicker.git",
+                "reference": "fd8bd86dd78f789fb742798b7d49aba0a957af62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Eonasdan/bootstrap-datetimepicker/zipball/fd8bd86dd78f789fb742798b7d49aba0a957af62",
+                "reference": "fd8bd86dd78f789fb742798b7d49aba0a957af62",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8.3",
+                "bower-asset/moment": ">=2.9.0",
+                "bower-asset/moment-timezone": ">=0.4.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "build/css/bootstrap-datetimepicker.min.css",
+                    "build/js/bootstrap-datetimepicker.min.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ],
+                "bower-asset-private": false
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "bootstrap3 datetimepicker",
+            "keywords": [
+                "bootstrap",
+                "datepicker",
+                "datetimepicker",
+                "moment",
+                "timepicker",
+                "twitter-bootstrap"
+            ]
+        },
+        {
+            "name": "bower-asset/font-awesome",
+            "version": "v4.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/8e241f209faa1dd2182c9fdc9c352d8806504a4e",
+                "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "less/font-awesome.less",
+                    "scss/font-awesome.scss"
+                ],
+                "bower-asset-ignore": [
+                    "*/.*",
+                    "*.json",
+                    "src",
+                    "*.yml",
+                    "Gemfile",
+                    "Gemfile.lock",
+                    "*.md"
+                ]
+            },
+            "license": [
+                "OFL-1.1",
+                "MIT",
+                "CC-BY-3.0"
+            ],
+            "description": "Font Awesome"
+        },
+        {
+            "name": "bower-asset/jqtree",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mbraak/jqTree.git",
+                "reference": "b395a41a223d0e93cd08e33f075c1245573307d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mbraak/jqTree/zipball/b395a41a223d0e93cd08e33f075c1245573307d7",
+                "reference": "b395a41a223d0e93cd08e33f075c1245573307d7",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.5"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jqtree.css",
+                    "jqtree-circle.png",
+                    "tree.jquery.js"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "7751e69b615c6eca6f783a81e292a55725af6b85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/7751e69b615c6eca6f783a81e292a55725af6b85",
+                "reference": "7751e69b615c6eca6f783a81e292a55725af6b85",
+                "shasum": ""
+            },
+            "require-dev": {
+                "bower-asset/qunit": "1.14.0",
+                "bower-asset/requirejs": "2.1.10",
+                "bower-asset/sinon": "1.8.1",
+                "bower-asset/sizzle": "2.1.1-patch2"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "build",
+                    "dist/cdn",
+                    "speed",
+                    "test",
+                    "*.md",
+                    "AUTHORS.txt",
+                    "Gruntfile.js",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "javascript",
+                "jquery",
+                "library"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.11.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-ui.js"
+                ],
+                "bower-asset-ignore": []
+            }
+        },
+        {
+            "name": "bower-asset/jquery.inputmask",
+            "version": "3.1.63",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
+                "reference": "c40c7287eadc31e341ebbf0c02352eb55b9cbc48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/c40c7287eadc31e341ebbf0c02352eb55b9cbc48",
+                "reference": "c40c7287eadc31e341ebbf0c02352eb55b9cbc48",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./dist/inputmask/jquery.inputmask.js",
+                    "./dist/inputmask/jquery.inputmask.extensions.js",
+                    "./dist/inputmask/jquery.inputmask.date.extensions.js",
+                    "./dist/inputmask/jquery.inputmask.numeric.extensions.js",
+                    "./dist/inputmask/jquery.inputmask.phone.extensions.js",
+                    "./dist/inputmask/jquery.inputmask.regex.extensions.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "qunit/",
+                    "nuget/",
+                    "tools/",
+                    "js/",
+                    "*.md",
+                    "build.properties",
+                    "build.xml",
+                    "jquery.inputmask.jquery.json"
+                ]
+            },
+            "license": [
+                "http://opensource.org/licenses/mit-license.php"
+            ],
+            "description": "jquery.inputmask is a jquery plugin which create an input mask.",
+            "keywords": [
+                "form",
+                "input",
+                "inputmask",
+                "jquery",
+                "mask",
+                "plugins"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "2.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "d6651c21c6131fbb5db891b60971357739015688"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/d6651c21c6131fbb5db891b60971357739015688",
+                "reference": "d6651c21c6131fbb5db891b60971357739015688",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/moment-timezone",
+            "version": "0.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment-timezone.git",
+                "reference": "eda36cb2c5ed62b7082593c3aeaff9b94204aa1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment-timezone/zipball/eda36cb2c5ed62b7082593c3aeaff9b94204aa1a",
+                "reference": "eda36cb2c5ed62b7082593c3aeaff9b94204aa1a",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/moment": ">=2.6.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "builds/moment-timezone-with-data-2010-2020.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "tests",
+                    "tasks",
+                    "data/*/20*.json",
+                    "contributing.md",
+                    "Gruntfile.js",
+                    "index.js",
+                    "package.json"
+                ]
+            },
+            "description": "Parse and display moments in any timezone."
+        },
+        {
+            "name": "bower-asset/ng-infinite-scroller-origin",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sroze/ngInfiniteScroll.git",
+                "reference": "f2fbba21726d5fd4889aeb087491d99f491e14e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sroze/ngInfiniteScroll/zipball/f2fbba21726d5fd4889aeb087491d99f491e14e1",
+                "reference": "f2fbba21726d5fd4889aeb087491d99f491e14e1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.2.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "build/ng-infinite-scroll.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "_*",
+                    "node_modules",
+                    "compile",
+                    "test",
+                    "Gruntfile.coffee",
+                    ".*"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/ngstorage",
+            "version": "0.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gsklee/ngStorage.git",
+                "reference": "3cd5ffaff77bebda910b94ca2a657ac44f4aac79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gsklee/ngStorage/zipball/3cd5ffaff77bebda910b94ca2a657ac44f4aac79",
+                "reference": "3cd5ffaff77bebda910b94ca2a657ac44f4aac79",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.0.8"
+            },
+            "require-dev": {
+                "bower-asset/angular-mocks": ">=1.0.8",
+                "bower-asset/chai": ">=2.0.0,<3.0.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./ngStorage.js",
+                "bower-asset-ignore": [
+                    "CHANGELOG.md",
+                    "components",
+                    "node_modules",
+                    "test",
+                    "package.json",
+                    "Gruntfile.js",
+                    ".bowerrc",
+                    ".gitignore",
+                    ".travis.yml"
+                ]
+            },
+            "keywords": [
+                "angular",
+                "cookie",
+                "local",
+                "localstorage",
+                "session",
+                "sessionstorage",
+                "storage"
+            ]
+        },
+        {
+            "name": "bower-asset/punycode",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bestiejs/punycode.js.git",
+                "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bestiejs/punycode.js/zipball/38c8d3131a82567bfef18da09f7f4db68c84f8a3",
+                "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "punycode.js",
+                "bower-asset-ignore": [
+                    "coverage",
+                    "tests",
+                    ".*",
+                    "component.json",
+                    "Gruntfile.js",
+                    "node_modules",
+                    "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/rangy",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timdown/rangy-release.git",
+                "reference": "a9518d3d6142b7fe58fd47ddd6a1068f7eb52a0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timdown/rangy-release/zipball/a9518d3d6142b7fe58fd47ddd6a1068f7eb52a0b",
+                "reference": "a9518d3d6142b7fe58fd47ddd6a1068f7eb52a0b",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "rangy-core.js",
+                    "rangy-classapplier.js",
+                    "rangy-highlighter.js",
+                    "rangy-selectionsaverestore.js",
+                    "rangy-serializer.js",
+                    "rangy-textrange.js"
+                ],
+                "bower-asset-ignore": [
+                    ".idea",
+                    ".gitignore"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A cross-browser JavaScript range and selection library.",
+            "keywords": [
+                "DOM",
+                "caret",
+                "range",
+                "selection"
+            ]
+        },
+        {
+            "name": "bower-asset/sip.js",
+            "version": "0.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onsip/SIP.js.git",
+                "reference": "bae44bd0359f4d70ded309a32361f04a04e78d6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onsip/SIP.js/zipball/bae44bd0359f4d70ded309a32361f04a04e78d6e",
+                "reference": "bae44bd0359f4d70ded309a32361f04a04e78d6e",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/sip.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "test",
+                    "*.md",
+                    "Gruntfile.js",
+                    "*.html",
+                    "*.json",
+                    "LICENSE",
+                    "src",
+                    "sip-*.*"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A JavaScript SIP stack for WebRTC, instant messaging, and more!",
+            "keywords": [
+                "javascript",
+                "sip",
+                "webrtc"
+            ]
+        },
+        {
+            "name": "bower-asset/textAngular",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fraywing/textAngular.git",
+                "reference": "fe544a65cb06ed03354655c1ae606ca152165610"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fraywing/textAngular/zipball/fe544a65cb06ed03354655c1ae606ca152165610",
+                "reference": "fe544a65cb06ed03354655c1ae606ca152165610",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.3.0",
+                "bower-asset/font-awesome": ">=4.0.0",
+                "bower-asset/rangy": "~1.3.0"
+            },
+            "require-dev": {
+                "bower-asset/angular-mocks": ">=1.3.0",
+                "bower-asset/jquery": "dev-1.9.x|1.9.x"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./dist/textAngular.js",
+                    "./dist/textAngular-sanitize.js",
+                    "./dist/textAngularSetup.js",
+                    "./dist/textAngular.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test*",
+                    "demo*",
+                    "Gruntfile.js",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A radically powerful Text-Editor/Wysiwyg editor for Angular.js",
+            "keywords": [
+                "angular",
+                "editor",
+                "wysiwyg"
+            ]
+        },
+        {
+            "name": "bower-asset/yii2-pjax",
+            "version": "v2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "reference": "60728da6ade5879e807a49ce59ef9a72039b8978"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/60728da6ade5879e807a49ce59ef9a72039b8978",
+                "reference": "60728da6ade5879e807a49ce59ef9a72039b8978",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./jquery.pjax.js",
+                "bower-asset-ignore": [
+                    ".travis.yml",
+                    "Gemfile",
+                    "Gemfile.lock",
+                    "CONTRIBUTING.md",
+                    "vendor/",
+                    "script/",
+                    "test/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "cebe/markdown",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/markdown.git",
+                "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/54a2c49de31cc44e864ebf0500a35ef21d0010b2",
+                "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2",
+                "shasum": ""
+            },
+            "require": {
+                "lib-pcre": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "cebe/indent": "*",
+                "facebook/xhprof": "*@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "bin": [
+                "bin/markdown"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "cebe\\markdown\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A super fast, highly extensible markdown parser for PHP",
+            "homepage": "https://github.com/cebe/markdown#readme",
+            "keywords": [
+                "extensible",
+                "fast",
+                "gfm",
+                "markdown",
+                "markdown-extra"
+            ],
+            "time": "2015-03-06 05:28:07"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/6f389f0f25b90d0b495308efcfa073981177f0fd",
+                "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "index0h/yii2-log",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/index0h/yii2-log.git",
+                "reference": "a470a913e953a190880ced04ddfa13fe2ecc4811"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/index0h/yii2-log/zipball/a470a913e953a190880ced04ddfa13fe2ecc4811",
+                "reference": "a470a913e953a190880ced04ddfa13fe2ecc4811",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "2.0.*",
+                "yiisoft/yii2-composer": "2.0.*"
+            },
+            "require-dev": {
+                "codeception/codeception": "2.0.*",
+                "yiisoft/yii2-elasticsearch": "2.0.*",
+                "yiisoft/yii2-redis": "2.0.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "writable": [
+                    "tests/_runtime",
+                    "tests/_log"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "index0h\\log\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Levishchenko",
+                    "email": "index.0h@gmail.com"
+                }
+            ],
+            "description": "Many Yii2 log targets",
+            "homepage": "https://github.com/index0h/yii2-log",
+            "keywords": [
+                "elasticsearch",
+                "log",
+                "log-target",
+                "logstash",
+                "redis",
+                "yii2",
+                "yii2-log"
+            ],
+            "time": "2015-05-24 22:32:44"
+        },
+        {
+            "name": "yiisoft/yii2",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-framework.git",
+                "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/f42b2eb80f61992438661b01d0d74c6738e2ff38",
+                "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": "2.1.*@stable | 1.11.*@stable",
+                "bower-asset/jquery.inputmask": "3.1.*",
+                "bower-asset/punycode": "1.3.*",
+                "bower-asset/yii2-pjax": ">=2.0.1",
+                "cebe/markdown": "~1.0.0 | ~1.1.0",
+                "ext-mbstring": "*",
+                "ezyang/htmlpurifier": "4.6.*",
+                "lib-pcre": "*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2-composer": "*"
+            },
+            "bin": [
+                "yii"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com",
+                    "homepage": "http://www.yiiframework.com/",
+                    "role": "Founder and project lead"
+                },
+                {
+                    "name": "Alexander Makarov",
+                    "email": "sam@rmcreative.ru",
+                    "homepage": "http://rmcreative.ru/",
+                    "role": "Core framework development"
+                },
+                {
+                    "name": "Maurizio Domba",
+                    "homepage": "http://mdomba.info/",
+                    "role": "Core framework development"
+                },
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Core framework development"
+                },
+                {
+                    "name": "Timur Ruziev",
+                    "email": "resurtm@gmail.com",
+                    "homepage": "http://resurtm.com/",
+                    "role": "Core framework development"
+                },
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com",
+                    "role": "Core framework development"
+                }
+            ],
+            "description": "Yii PHP Framework Version 2",
+            "homepage": "http://www.yiiframework.com/",
+            "keywords": [
+                "framework",
+                "yii2"
+            ],
+            "time": "2015-08-05 22:00:30"
+        },
+        {
+            "name": "yiisoft/yii2-bootstrap",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-bootstrap.git",
+                "reference": "3fd2b8c950cce79d60e9702d6bcb24eb3c80f6c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/3fd2b8c950cce79d60e9702d6bcb24eb3c80f6c5",
+                "reference": "3fd2b8c950cce79d60e9702d6bcb24eb3c80f6c5",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\bootstrap\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The Twitter Bootstrap extension for the Yii framework",
+            "keywords": [
+                "bootstrap",
+                "yii2"
+            ],
+            "time": "2016-03-17 03:29:28"
+        },
+        {
+            "name": "yiisoft/yii2-composer",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-composer.git",
+                "reference": "7452fd908a5023b8bb5ea1b123a174ca080de464"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/7452fd908a5023b8bb5ea1b123a174ca080de464",
+                "reference": "7452fd908a5023b8bb5ea1b123a174ca080de464",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "yii\\composer\\Plugin",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\composer\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The composer plugin for Yii extension installer",
+            "keywords": [
+                "composer",
+                "extension installer",
+                "yii2"
+            ],
+            "time": "2016-02-06 00:49:24"
+        },
+        {
+            "name": "yiisoft/yii2-debug",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-debug.git",
+                "reference": "55ed2e853ed8050a34415f63a4da84f88a56f895"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/55ed2e853ed8050a34415f63a4da84f88a56f895",
+                "reference": "55ed2e853ed8050a34415f63a4da84f88a56f895",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": ">=2.0.4",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\debug\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The debugger extension for the Yii framework",
+            "keywords": [
+                "debug",
+                "debugger",
+                "yii2"
+            ],
+            "time": "2016-03-17 03:50:19"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "yiisoft/yii2-codeception",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-codeception.git",
+                "reference": "c916a36d09fc128b05a374e7922bc56854334d56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/c916a36d09fc128b05a374e7922bc56854334d56",
+                "reference": "c916a36d09fc128b05a374e7922bc56854334d56",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": ">=2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\codeception\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Jebri",
+                    "email": "mark.github@yandex.ru"
+                }
+            ],
+            "description": "The Codeception integration for the Yii framework",
+            "keywords": [
+                "codeception",
+                "yii2"
+            ],
+            "time": "2016-03-17 03:41:26"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

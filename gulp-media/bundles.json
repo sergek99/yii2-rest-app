@@ -1,0 +1,125 @@
+{
+  "categoryManagement": {
+    "js": [
+      "src/categoryManagement/actionHistory.js",
+      "src/categoryManagement/category.js"
+    ],
+    "css": [
+      "src/categoryManagement/*.css"
+    ],
+    "require": [
+      "jqTree",
+      "restAppStyles"
+    ],
+    "compiled": true,
+    "apps": [
+      "restApp"
+    ]
+  },
+  "restApp": {
+    "js": [
+      "src/restApp/js/app.js",
+      "src/restApp/js/controllers/*.js",
+      "src/restApp/js/factories/*.js",
+      "src/restApp/js/services/*.js",
+      "src/restApp/js/directives/*.js",
+      "src/vendors/bootstrap-select/dist/js/bootstrap-select.min.js"
+    ],
+    "fonts": [
+      "src/restApp/fonts/font-awesome/*",
+      "../vendor/bower/bootstrap/fonts/*"
+    ],
+    "css": [
+      "../vendor/bower/bootstrap/dist/css/bootstrap.min.css",
+      "src/vendors/angular-tree-dnd/ng-tree-dnd.min.css",
+      "src/restApp/css/*.css",
+      "../vendor/bower/jquery-ui/themes/base/jquery-ui.min.css"
+    ],
+    "compiled": true,
+    "apps": [
+      "restApp"
+    ]
+  },
+  "restAppVendor": {
+    "compiled": true,
+    "apps": [
+      "restApp"
+    ],
+    "require": [
+      "jquery",
+      "jquery-ui",
+      "angular",
+      "angular-tree-dnd",
+      "restAppStyles"
+    ]
+  },
+  "ckeditor": {
+    "compiled": true,
+    "copy": [
+      "../vendor/bower/ckeditor/**/*"
+    ],
+    "js": [
+      "../vendor/bower/ckeditor/ckeditor.js",
+      "src/restApp/js/ckeditor/*.js"
+    ],
+    "apps": [
+      "restApp"
+    ]
+  },
+  "angular": {
+    "js": [
+      "../vendor/bower/angular/angular.js",
+      "../vendor/bower/angular-ui-router/release/angular-ui-router.js",
+      "../vendor/bower/angular-resource/angular-resource.js",
+      "../vendor/bower/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js",
+      "../vendor/bower/angular-ui-sortable/sortable.js",
+      "../vendor/bower/angular-file-upload/dist/angular-file-upload.min.js",
+      "../vendor/bower/angular-cookies/angular-cookies.js",
+      "src/vendors/angular-tree-dnd/ng-tree-dnd.js",
+      "../vendor/bower/ng-infinite-scroller-origin/build/ng-infinite-scroll.js"
+    ],
+    "compiled": false
+  },
+  "restAppStyles": {
+    "less": [
+      "src/categoryManagement/less/mixins.less",
+      "src/categoryManagement/less/fonts.less",
+      "src/categoryManagement/less/reset.less",
+      "src/categoryManagement/less/sprite.less",
+      "src/categoryManagement/less/*.less"
+    ],
+    "compiled": false
+  },
+  "jqTree": {
+    "js": [
+      "../vendor/bower/jqtree/tree.jquery.js"
+    ],
+    "css": [
+      "../vendor/bower/jqtree/jqtree.css"
+    ],
+    "require": [
+      "jquery"
+    ],
+    "compiled": false
+  },
+  "jquery": {
+    "js": [
+      "../vendor/bower/jquery/dist/jquery.min.js"
+    ],
+    "compiled": false
+  },
+  "lodash": {
+    "js": [
+      "src/vendors/lodash.js",
+      "src/vendors/jsclass.js"
+    ],
+    "compiled": false
+  },
+  "jquery-ui": {
+    "js": [
+      "../vendor/bower/jquery-ui/jquery-ui.js"
+    ]
+  }
+
+
+}

@@ -1,0 +1,150 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-primary" ng-click="newProjectClick()">Новый проект</button>
+</div>
+
+
+<div class="well" >
+    <table class="table table-hover">
+        <thead>
+            <th>id</th>
+            <th>Наименование</th>
+            <th>Статус</th>
+            <th>Дата начала</th>
+            <th>Дата завершения</th>
+            <th style="text-align: right">Действия</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in projects">
+                <td>{{project.id}}</td>
+                <td>{{project.name}}</td>
+                <td>
+                    <h3 class="label" ng-class="{'label-danger': (project.status == 2), 'label-success': (project.status == 0), 'label-default': (project.status == 1)}">
+                        {{statusName(project.status)}}
+                    </h3>
+                </td>
+                <td>{{project.date_start}}</td>
+                <td>{{project.date_end}}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default glyphicon glyphicon-search" ui-sref="tasks({id:project.id})"></button>
+                        <button type="button" class="btn btn-default glyphicon glyphicon-pencil" ng-click="projectEdit()"></button>
+                        <button type="button" class="btn btn-danger glyphicon glyphicon-trash" ng-click="projectRemove(project.id, $index)"></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <uib-pagination ng-if="pagination.totalCount > 20" total-items="pagination.totalCount"
+                    ng-model="currentPage"
+                    items-per-page="pagination.defaultPageSize"
+                    ng-change="pageChanged()"
+                    max-size="5">
+    </uib-pagination>
+</div>
+
+<script type="text/ng-template" id="newProject">
+    <div class="modal-header">
+        Новый проект
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group" ng-class="{'has-error': errors.name}">
+                <label for="project__name">Название</label>
+                <input class="form-control" id="project__name" placeholder="Название" ng-model="project.name">
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.description}">
+                <label for="project__description">Описание</label>
+                <textarea class="form-control" id="project__description" placeholder="Описание" ng-model="project.description">
+                </textarea>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.date_start}">
+                <label for="project__data-start">Начало проекта</label>
+                <p class="input-group">
+                    <input type="text" id="project__data-start" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateStart" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_start">{{errors.date_start[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.date_end}">
+                <label for="project__data-end">Завершение проекта</label>
+                <p class="input-group">
+                    <input type="text" id="project__data-end" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateEnd" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_end">{{errors.date_end[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.owner}">
+                <label for="project__owner">Владелец проекта</label>
+                <select class="form-control" id="project__owner" placeholder="Владелец проекта" ng-model="project.owner">
+                    <option ng-repeat="user in users" value="{{user.id}}">{{getUserName(user)}}</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" ng-click="save()">Сохранить</button>
+                <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/ng-template" id="editProject">
+    <div class="modal-header">
+        Новый проект
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group" ng-class="{'has-error': errors.name}">
+                <label for="project__name">Название</label>
+                <input class="form-control" id="project__name" placeholder="Название" ng-model="project.name">
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.description}">
+                <label for="project__description">Описание</label>
+                <textarea class="form-control" id="project__description" placeholder="Описание" ng-model="project.description">
+                </textarea>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.date_start}">
+                <label for="project__data-start">Начало проекта</label>
+                <p class="input-group">
+                    <input type="text" id="project__data-start" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateStart" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_start">{{errors.date_start[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.date_end}">
+                <label for="project__data-end">Завершение проекта</label>
+                <p class="input-group">
+                    <input type="text" id="project__data-end" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateEnd" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_end">{{errors.date_end[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.owner}">
+                <label for="project__owner">Ответственный</label>
+                <select class="form-control" id="task__status"
+                        ng-model="project.owner"
+                        ng-options="user.id as getUserName(user) for user in users">
+                </select>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" ng-click="save()">Сохранить</button>
+                <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+            </div>
+        </form>
+    </div>
+</script>

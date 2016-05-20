@@ -1,0 +1,237 @@
+<style>
+    .banners-action {
+        width: 350px;
+    }
+    .over-zone {
+        border: 2px dashed lavender;
+        height: 100px;
+        padding: 4px;
+    }
+    .other-drop-zone {
+        border: 2px dashed burlywood;
+        padding: 4px;
+        height: 100px;
+    }
+    .zone {
+        width: 98%;
+    }
+    .min-image {
+        max-height: 30px;
+        max-width: 30px;
+        position: absolute;
+    }
+    .max-image {
+        max-height: 450px;
+        max-width: 450px;
+        position: absolute;
+        z-index: 100;
+    }
+</style>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-primary" ng-click="newUser()">Новый Пользователь</button>
+</div>
+<div class="user__sort">
+    <div class="user__sort-name btn btn-default" ng-click="sort()">
+        Фамилия / Имя
+        <span class="glyphicon " ng-class="getSortClass()"></span>
+    </div>
+
+</div>
+<div class="user__filter">
+    <form class="form-inline" role="form">
+        <div class="input-group">
+            <input class="form-control" placeholder="Фамилия / Имя" ng-model="filter.name">
+        </div>
+
+        <div class="input-group">
+            <input class="form-control" placeholder="Email" ng-model="filter.email">
+        </div>
+
+        <div class="btn btn-success" ng-click="applyFilter()">
+            <span class="glyphicon glyphicon-search"></span>
+            Искать
+        </div>
+    </form>
+</div>
+
+<div class="well" ng-repeat="user in users">
+    <div class="row">
+        <div class="col-md-1">
+            <span class="badge">id {{user.id}}</span>
+        </div>
+        <div class="col-md-2">
+            {{user.lastname}} {{user.firstname}} {{user.patronomyc}}
+        </div>
+        <div class="col-md-1">
+            <h3 class="label" ng-class="{'label-danger': (user.status == 2), 'label-success': (user.status == 1), 'label-default': (user.status == 0)}">
+                {{statusName(user.status)}}
+            </h3>
+        </div>
+        <div class="col-md-2">
+            <h3 class="label label-primary">{{user.email}}</h3>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default glyphicon glyphicon-search" ng-click="userInfo()"></button>
+                <button type="button" class="btn btn-default glyphicon glyphicon-pencil" ng-click="userEdit()"></button>
+                <button type="button" class="btn btn-danger glyphicon glyphicon-trash" ng-click="userRemove($index)"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<uib-pagination ng-if="pagination.totalCount > 20" total-items="pagination.totalCount"
+            ng-model="currentPage"
+            items-per-page="pagination.defaultPageSize"
+            ng-change="pageChanged()"
+            max-size="5"
+        >
+</uib-pagination>
+
+<script type="text/ng-template" id="userInfo">
+    <div class="modal-header">Информация о пользователе</div>
+    <div class="modal-body">
+        <ul>
+            <li>Фамилия: <span class="text-primary">{{user.lastname}}</span></li>
+            <li>Имя: <span class="text-primary">{{user.firstname}}</span></li>
+            <li>Email: <span class="text-primary">{{user.email}}</span></li>
+            <li>Телефон: <span class="text-primary">{{user.phone}}</span></li>
+            <li>Зарегистирован: <span class="text-primary">{{user.created_at | date: 'short'}}</span></li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="ok()">ОК</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="userEdit">
+    <div class="modal-header">
+        Редактирование пользователя
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group" ng-class="{'has-error': !user.lastname}">
+                <label for="user__last-name">Фамилия</label>
+                <input class="form-control" id="user__last-name" placeholder="Фамилия" ng-model="user.lastname">
+            </div>
+            <div class="form-group" ng-class="{'has-error': !user.firstname}">
+                <label for="user__first-name">Имя</label>
+                <input class="form-control" id="user__first-name" placeholder="Имя" ng-model="user.firstname">
+            </div>
+            <div class="form-group" ng-class="{'has-error': !user.email}">
+                <label for="user__email">E-mail</label>
+                <input class="form-control" id="user__email" placeholder="E-mail" ng-model="user.email">
+            </div>
+
+            <div class="form-group" ng-if="user.avatar != null">
+                <img ng-src="http://sgmsoft.loc/images/users/{{user.avatar}}">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Аватар</label>
+                <ul ng-if="uploader.queue.length > 0">
+                    <li ng-repeat="item in uploader.queue">
+                        <div ng-if="controller.isImage(item._file)">
+                            <div ng-thumb="{ file: item._file, height: 100 }"></div>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger" ng-click="item.remove()">Удалить</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <div ng-show="uploader.isHTML5">
+                    <div nv-file-drop="" nv-file-over="" uploader="uploader" over-class="other-over-zone" class="other-drop-zone zone" style="float: right;">
+                        перенесите файл для загрузки
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <input type="file" nv-file-select="" uploader="uploader"/>
+
+                <div>
+                    <div>
+                        Загрузка: {{ uploader.progress }}
+                        <div class="total-progress-box">
+                            <div class="total-progress" ng-if="uploader.progress > 0" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="user__password">Новый пароль</label>
+                <input class="form-control" id="user__password" placeholder="Введите новый пароль" ng-model="user.password">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" ng-click="save()">Сохранить</button>
+                <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/ng-template" id="userNew">
+    <div class="modal-header">
+        Новый пользователь
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group" ng-class="{'has-error': !user.lastname}">
+                <label for="user__last-name">Фамилия</label>
+                <input class="form-control" id="user__last-name" placeholder="Фамилия" ng-model="user.lastname">
+            </div>
+            <div class="form-group" ng-class="{'has-error': !user.firstname}">
+                <label for="user__first-name">Имя</label>
+                <input class="form-control" id="user__first-name" placeholder="Имя" ng-model="user.firstname">
+            </div>
+            <div class="form-group" ng-class="{'has-error': !user.email}">
+                <label for="user__email">E-mail</label>
+                <input class="form-control" id="user__email" placeholder="E-mail" ng-model="user.email">
+            </div>
+
+            <div class="form-group" ng-if="user.avatar != null">
+                <img ng-src="http://sgmsoft.loc/images/users/{{user.avatar}}">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Аватар</label>
+                <ul ng-if="uploader.queue.length > 0">
+                    <li ng-repeat="item in uploader.queue">
+                        <div ng-if="controller.isImage(item._file)">
+                            <div ng-thumb="{ file: item._file, height: 100 }"></div>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger" ng-click="item.remove()">Удалить</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <div ng-show="uploader.isHTML5">
+                    <div nv-file-drop="" nv-file-over="" uploader="uploader" over-class="other-over-zone" class="other-drop-zone zone" style="float: right;">
+                        перенесите файл для загрузки
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <input type="file" nv-file-select="" uploader="uploader"/>
+
+                <div>
+                    <div>
+                        Загрузка: {{ uploader.progress }}
+                        <div class="total-progress-box">
+                            <div class="total-progress" ng-if="uploader.progress > 0" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="user__password">Новый пароль</label>
+                <input class="form-control" id="user__password" placeholder="Введите новый пароль" ng-model="user.password">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" ng-click="save()">Сохранить</button>
+                <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+            </div>
+        </form>
+    </div>
+</script>

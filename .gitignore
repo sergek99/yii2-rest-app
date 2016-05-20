@@ -1,0 +1,9 @@
+# ides
+.idea
+.vscode
+# vagrant
+.vagrant
+Vagrantfile
+
+# composer
+vendor

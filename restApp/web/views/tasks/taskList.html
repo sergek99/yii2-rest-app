@@ -1,0 +1,248 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-primary" ui-sref="projects">К списку проектов</button>
+    <button type="button" class="btn btn-primary" ng-click="newTask()">Новое задание</button>
+</div>
+
+
+<div class="well" >
+    <table class="table table-hover">
+        <thead>
+            <th>id</th>
+            <th>Наименование</th>
+            <th>Проект</th>
+            <th>Исполнитель</th>
+            <th>Статус</th>
+            <th>Дата начала</th>
+            <th>Дата завершения</th>
+            <th style="text-align: right">Действия</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in tasks">
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+                <td>{{task.project.name}}</td>
+                <td>{{getUserName(task.user)}}</td>
+                <td>
+                    <h3 class="label" ng-class="{'label-danger': (task.status == 2), 'label-success': (task.status == 0), 'label-default': (task.status == 1)}">
+                        {{statusName(task.status)}}
+                    </h3>
+                </td>
+                <td>{{task.date_start}}</td>
+                <td>{{task.date_end}}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default glyphicon" ng-click="taskHistory(task.id)">История изменений</button>
+                        <button type="button" class="btn btn-default glyphicon glyphicon-pencil" ng-click="taskEdit()"></button>
+                        <button type="button" class="btn btn-danger glyphicon glyphicon-trash" ng-click="taskRemove($index)"></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <uib-pagination ng-if="pagination.totalCount > 20" total-items="pagination.totalCount"
+                    ng-model="currentPage"
+                    items-per-page="pagination.defaultPageSize"
+                    ng-change="pageChanged()"
+                    max-size="5">
+    </uib-pagination>
+</div>
+
+<script type="text/ng-template" id="newTask">
+    <div class="modal-header">
+        Новый задача
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group" ng-class="{'has-error': errors.name}">
+                <label for="task__name">Название</label>
+                <input class="form-control" id="task__name" placeholder="Название" ng-model="task.name">
+                <div role="alert">
+                    <span class="error" ng-show="errors.name">{{errors.name[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.description}">
+                <label for="task__description">Описание</label>
+                <textarea class="form-control" id="task__description" placeholder="Описание" ng-model="task.description">
+                </textarea>
+                <div role="alert">
+                    <span class="error" ng-show="errors.description">{{errors.description[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.user_id}">
+                <label for="task__owner">Исполнитель</label>
+                <select class="form-control" id="task__owner" placeholder="Исполнитель" ng-model="task.user_id">
+                    <option ng-repeat="user in users" value="{{user.id}}">{{getUserName(user)}}</option>
+                </select>
+                <div role="alert">
+                    <span class="error" ng-show="errors.user_id">{{errors.user_id[0]}}</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': errors.status}">
+                <label for="task__status">Статус</label>
+                <select class="form-control" id="task__status"
+                        ng-model="task.status"
+                        ng-options="status.id as status.title for status in statuses">
+                </select>
+                <div role="alert">
+                    <span class="error" ng-show="errors.status">{{errors.status[0]}}</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': errors.date_start}">
+                <label for="task__data-start">Начало задачи</label>
+                <p class="input-group">
+                    <input type="text" id="task__data-start" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateStart" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_start">{{errors.date_start[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.date_end}">
+                <label for="task__data-end">Завершение задачи</label>
+                <p class="input-group">
+                    <input type="text" id="task__data-end" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateEnd" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_end">{{errors.date_end[0]}}</span>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" ng-click="save()">Сохранить</button>
+                <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/ng-template" id="editTask">
+    <div class="modal-header">
+        Редактирование задачи
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group" ng-class="{'has-error': errors.name}">
+                <label for="task__name">Название</label>
+                <input class="form-control" id="task__name" placeholder="Название" ng-model="task.name">
+                <div role="alert">
+                    <span class="error" ng-show="errors.name">{{errors.name[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.description}">
+                <label for="task__description">Описание</label>
+                <textarea class="form-control" id="task__description" placeholder="Описание" ng-model="task.description">
+                </textarea>
+                <div role="alert">
+                    <span class="error" ng-show="errors.description">{{errors.description[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.user_id}">
+                <label for="task__user">Исполнитель</label>
+                <p class="input-group">
+                    <input class="form-control" id="task__user" placeholder="Исполнитель" value="{{getUserName(task.user)}}" readonly>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="addNewUser()"><i class="glyphicon glyphicon-pencil"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="well" ng-show="newUser">
+                <div class="form-group" ng-class="{'has-error': historyErrors.new_user}">
+                    <label for="history__new-user">Новый исполнитель</label>
+                    <select ng-change="changeUser()" class="form-control" id="history__new-user" placeholder="Исполнитель" ng-model="history.new_user">
+                        <option ng-repeat="user in users" value="{{user.id}}">{{getUserName(user)}}</option>
+                    </select>
+                    <div role="alert">
+                        <span class="error" ng-show="historyErrors.new_user">{{historyErrors.new_user[0]}}</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': historyErrors.comment}">
+                    <label for="history__comment">Описание</label>
+                    <textarea class="form-control" id="history__comment" placeholder="Описание" ng-model="history.comment">
+                    </textarea>
+                    <div role="alert">
+                        <span class="error" ng-show="historyErrors.comment">{{historyErrors.comment[0]}}</span>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" ng-click="newUserSave()">Сохранить</button>
+                    <button type="button" class="btn btn-cancel" ng-click="newUserCancel()">Отменить</button>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': errors.status}">
+                <label for="task__status">Статус</label>
+                <select class="form-control" id="task__status"
+                        ng-model="task.status"
+                        ng-options="status.id as status.title for status in statuses">
+                </select>
+                <div role="alert">
+                    <span class="error" ng-show="errors.status">{{errors.status[0]}}</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': errors.date_start}">
+                <label for="task__data-start">Начало задачи</label>
+                <p class="input-group">
+                    <input type="text" id="task__data-start" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateStart" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" readonly/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" disabled="disabled"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_start">{{errors.date_start[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errors.date_end}">
+                <label for="task__data-end">Завершение задачи</label>
+                <p class="input-group">
+                    <input type="text" id="task__data-end" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dateEnd" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div role="alert">
+                    <span class="error" ng-show="errors.date_end">{{errors.date_end[0]}}</span>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" ng-click="save()">Сохранить</button>
+                <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/ng-template" id="historyTask">
+    <div class="modal-header">
+        История задачи
+    </div>
+    <div class="modal-body">
+        <div class="well" >
+            <table class="table table-hover">
+                <thead>
+                    <th>id</th>
+                    <th>Комментарий</th>
+                    <th>Изменения</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="h in history">
+                        <td>{{h.id}}</td>
+                        <td>{{h.comment}}</td>
+                        <td>{{getUserName(h.oldValue)}} -> {{getUserName(h.newValue)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-cancel" ng-click="cancel()">Отменить</button>
+        </div>
+    </div>
+</script>

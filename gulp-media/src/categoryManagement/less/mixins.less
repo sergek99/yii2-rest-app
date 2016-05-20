@@ -1,0 +1,312 @@
+@import "variables";
+
+// Прозрачность.
+
+.opacity(@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-webkit-opacity: @opacity;
+	opacity: @opacity;
+	@opperc: @opacity * 100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+	filter: ~"alpha(opacity=@{opperc})";
+}
+
+// Скругленые углы.
+
+.border-radius(@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+ .column (@count, @offset) {
+	 column-count: @count;
+	 -moz-column-count: @count;
+	 -webkit-column-count: @count;
+	 column-gap: @offset;
+	 -moz-column-gap: @offset;
+	 -webkit-column-gap: @offset;
+ }
+
+.user-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+
+.calculator(@all, @offset) {
+	width: calc(@all~" - "@offset);
+	width: -moz-calc(@all~" - "@offset);
+	width: -webkit-calc(@all~" - "@offset);
+	width: -o-calc(@all~" - "@offset);
+}
+
+.box-shadow(@horizontal: 0px, @vertical: 1px, @radius: 1px, @color: #fff, @tension: 0) {
+	-moz-box-shadow: @horizontal @vertical @radius @tension @color;
+	-webkit-box-shadow: @horizontal @vertical @radius @tension @color;
+	box-shadow: @horizontal @vertical @radius @tension @color;
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+	-webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+// Центрирование спозиционированного элемента по горизонтали.
+
+.center-position-horizontally(@width, @position: absolute) {
+	position: @position;
+	left: 50%;
+	margin-left: -@width / 2;
+}
+
+// Центрирование спозиционированного элемента по вертикали.
+
+.center-position-vertically(@height, @position: absolute) {
+	position: @position;
+	top: 50%;
+	margin-top: -@height / 2;
+}
+
+// Центрирование спозиционированного элемента по горизонтали и вертикали.
+
+.center-position(@width, @height, @position: absolute) {
+	.center-position-horizontally(@width);
+	.center-position-vertically(@height, @position);
+}
+
+// Шрифт.
+
+.font(@size, @lineHeight: 1.2, @color: #000, @family: Lato, @weight: normal, @style: normal, @letterSpacing: inherit) {
+	font: @weight @style @size @family, sans-serif;
+	line-height: @lineHeight;
+	letter-spacing: @letterSpacing;
+	color: @color;
+}
+
+// Плавная смена свойств.
+
+.transition(@property: all, @duration: 0.3s, @delay: 0s, @ease: ease-in-out) {
+	-webkit-transition+: @arguments;
+	-moz-transition+: @arguments;
+	-o-transition+: @arguments;
+	transition+: @arguments;
+}
+
+// Трасформация.
+
+.transform(...) {
+	-webkit-transform+_: @arguments;
+	-moz-transform+_: @arguments;
+	-o-transform+_: @arguments;
+	-ms-transform+_: @arguments;
+	transform+_: @arguments;
+}
+
+// Точка трасформации.
+
+.transform-origin(@x: 50%, @y: 50%, @z: 0) {
+	-webkit-transform-origin: @x @y @z;
+	-moz-transform-origin: @x @y @z;
+	-o-transform-origin: @x @y @z;
+	-ms-transform-origin: @x @y @z;
+	transform-origin: @x @y @z;
+}
+
+// Поворт элемента.
+
+.rotation(@deg: 5deg) {
+	.transform(rotate(@deg));
+}
+
+// Зумирование элемента.
+
+.scale(@ratio: 1.5) {
+	.transform(scale(@ratio));
+}
+
+.box-sizing(@sizing: border-box) {
+	-ms-box-sizing: @sizing;
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	box-sizing: @sizing;
+}
+
+// Размытие
+
+.blur(@radius:2) {
+	-webkit-filter: blur(@radius + 0px);
+	-moz-filter: blur(@radius + 0px);
+	-ms-filter: blur(@radius + 0px);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='blur'><feGaussianBlur stdDeviation='@{radius}'/></filter></svg>#blur");
+	filter: blur(@radius + 0px);
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=@radius);
+}
+
+// Background cover
+
+.cover-bg() {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	//	filters are not relative to css, they require a full server path
+	//	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{imgUrl}', sizingMethod='scale');
+	//	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{imgUrl}', sizingMethod='scale')";
+}
+
+// Используется для перекрытия блока.
+
+.full-size() {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+// Метод запрета/разрешения на выделение текста/элементов.
+
+.user-select(@argument: none) {
+	-webkit-user-select: @argument;
+	-moz-user-select: @argument;
+	-ms-user-select: @argument;
+	user-select: @argument;
+}
+
+// Спрайты.
+
+.sprite(@x, @y, @imageName: 'sprite.png') {
+	background: url("../@{imgPath}@{imageName}") unit(-@x, px) unit(-@y, px) no-repeat;
+}
+
+.sprite-position(@x, @y) {
+	background-position: unit(-@x, px) unit(-@y, px);
+}
+
+// Спрайт с поддержкой ретины.
+
+.sprite-retina(@x, @y, @imageName, @sprite-width) {
+	background: url("../@{imgPath}@{imageName}") unit(-@x, px) unit(-@y, px) no-repeat;
+
+	@media (-webkit-min-device-pixel-ratio: 1.5),
+	(min-resolution: 1.5dppx),
+	(min-resolution: 144dpi) {
+		background-image: url("../@{imgPath}retina-@{imageName}");
+		-webkit-background-size: unit(@sprite-width, px) auto;
+		-moz-background-size: unit(@sprite-width, px) auto;
+		-o-background-size: unit(@sprite-width, px) auto;
+		-ms-background-size: unit(@sprite-width, px) auto;
+		background-size: unit(@sprite-width, px) auto;
+	}
+}
+
+// Обнуление пробелов для конейнера с inline-block.
+
+.collapse-spacing() {
+	display: table;
+	font-size: 0;
+}
+
+// Список содержащий inline-block.
+
+.inline-list(@verticalAlign: middle) {
+	.collapse-spacing();
+
+	& > * {
+		display: inline-block;
+		vertical-align: @verticalAlign;
+	}
+}
+
+// Иконка при наведении.
+
+.icon-hover(@width, @height, @x, @y, @hover-x, @hover-y, @imageName: 'sprite.png', @duration: 0.3s, @property: all, @ease: ease-out, @delay: 0s) {
+	position: relative;
+	width: @width;
+	height: @height;
+
+	&:before,
+	&:after {
+		content: '';
+		.full-size();
+		.transition(@duration, @property, @ease, @delay);
+	}
+
+	&:before {
+		.sprite(@x, @y, @imageName);
+		.opacity(1);
+	}
+
+	&:after {
+		.sprite(@hover-x, @hover-y, @imageName);
+		.opacity(0);
+	}
+
+	&:hover {
+		&:before {
+			.opacity(0);
+		}
+
+		&:after {
+			.opacity(1);
+		}
+	}
+}
+
+// Градиент.
+
+.gradient(@gradient, @gradient-bottom: darken(@gradient, 15%)) {
+	background: -moz-linear-gradient(top, @gradient 0%, @gradient-bottom 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gradient), color-stop(100%,@gradient-bottom));
+	background: -webkit-linear-gradient(top,  @gradient 0%, @gradient-bottom 100%);
+	background: -o-linear-gradient(top,  @gradient 0%, @gradient-bottom 100%);
+	background: -ms-linear-gradient(top,  @gradient 0%, @gradient-bottom 100%);
+	background: linear-gradient(to bottom,  @gradient 0%, @gradient-bottom 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{gradient}', endColorstr='@{gradient-bottom}', GradientType=0);
+}
+
+.horizontal-gradient (@gradient-left, @gradient-right) {
+	background: -webkit-linear-gradient(left, @gradient-left, @gradient-right);
+	background: -moz-linear-gradient(right, @gradient-left, @gradient-right);
+	background: -ms-linear-gradient(right, @gradient-left, @gradient-right);
+	background: -o-linear-gradient(right, @gradient-left, @gradient-right);
+	background: linear-gradient(to right, @gradient-left, @gradient-right);
+}
+
+// Определение иконочного шрифта.
+
+.icons() {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Убирание желтого фона у полей с автокомплитом в Google Chrome
+
+.autofill() {
+	&:-webkit-autofill {
+		-webkit-box-shadow: inset 0 0 0 50px @white !important;
+		-webkit-text-fill-color: @gray !important;
+		color: @gray !important;
+	}
+}

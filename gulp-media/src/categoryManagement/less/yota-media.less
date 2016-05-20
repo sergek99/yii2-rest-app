@@ -1,0 +1,344 @@
+.y-row {
+	width: 100%;
+
+	.y-item {
+		@media (min-width: 1920px) {
+			// 8 элеметов.
+			width: 100/6%;
+		}
+
+		@media (max-width: 1920px) and (min-width: 1600px) {
+			// 6 элеметов.
+			width: 100/5%;
+		}
+
+
+		@media (max-width: 1600px) and (min-width: 1380px) {
+			// 4 элемета.
+			width: 25%;
+		}
+
+
+		@media (max-width: 1380px) and (min-width: 1100px) {
+			// 4 элемета.
+			width: 100/3%;
+		}
+
+		@media (max-width: 1100px) and (min-width: 840px) {
+			// 3 элемета.
+			width: 100/2%;
+		}
+
+		@media (max-width: 840px)  {
+			// 2 элеметов.
+			width: 100%;
+		}
+
+	/*	@media (max-width: 480px) {
+			// 1 элемет.
+			width: 100%;
+		}
+		*/
+	}
+
+	.y-item-other {
+		@media (min-width: 1920px) {
+			// 8 элеметов.
+			width: 87.5%;
+		}
+
+		@media (max-width: 1920px) and (min-width: 1380px) {
+			// 6 элеметов.
+			width: 500/6%;
+		}
+
+		@media (max-width: 1600px) and (min-width: 1024px) {
+			// 4 элемета.
+			width: 75%;
+		}
+
+		@media (max-width: 1024px) and (min-width: 770px) {
+			// 3 элемета.
+			width: 2*100/3%;
+		}
+
+		@media (max-width: 770px) and (min-width: 480px) {
+			// 2 элеметов.
+			width: 100%;
+		}
+
+		@media (max-width: 480px) {
+			// 1 элемет.
+			width: 100%;
+		}
+	}
+
+	.y-item-two {
+		@media (max-width: 770px) and (min-width: 480px) {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 770px) {
+	.b-left-sidebar {
+		width: 40%;
+	}
+
+	.b-products {
+		padding-left: 10px;
+	}
+}
+
+@media (max-width: 500px) {
+	.b-left-sidebar {
+		width: 100%;
+		display: block !important;
+	}
+
+	.b-products {
+		display: block !important;
+		padding-left: 0px;
+	}
+}
+
+
+
+@media (max-width: 1024px) {
+	.b-top-line {
+		.title-logo {
+			letter-spacing: 2px;
+			.font(22px,25px,#fff);
+		}
+
+		.top-menu .main-title {
+			padding: 0 10px;
+		}
+	}
+
+	.b-login  {
+		.item .link {
+			padding: 0 10px;
+			&:before {
+				background: none;
+			}
+		}
+	}
+
+	.m-search-page {
+		margin-bottom: 20px;
+
+		.big-input-par {
+			padding-left: 15px;
+			margin: 20px 0;
+			width: 100%;
+
+			.big-input:before {
+				background: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 770px) {
+	.b-filter {
+		margin: 28px 1% 0;
+	}
+
+	.h-offset {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+}
+
+@media (max-width: 1400px) {
+	.p-product {
+		.left-column {
+			width: 55%;
+		}
+		.right-column {
+			width: 45%;
+		}
+	}
+}
+
+
+.p-filters .wrapper-filters {
+	/*@media (max-width: 1500px) {
+		width: 90%
+	}
+
+	@media (max-width: 1400px) {
+		.column(3, 0px) !important;
+	}
+
+	@media (max-width: 1200px) {
+		.column(2, 0px) !important;
+	}
+
+	@media (max-width: 700px) {
+		.column(1, 0px) !important;
+	}
+	*/
+}
+
+
+@media (max-width: 1200px) and (min-width: 1000px) {
+	.p-product {
+		.left-column {
+			width: 45%;
+
+			.images {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+
+			.important-info {
+				float: none;
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+
+		.right-column {
+
+			width: 55%;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.p-product {
+		.left-column {
+			width: 100%;
+
+		}
+
+		.right-column {
+			width: 100%;
+
+			.offers-list {
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.p-product {
+		.options-title {
+			height: auto !important;
+		}
+	}
+}
+
+@media (max-width: 880px) and (min-width: 650px) {
+	.p-product {
+		.options-content-element {
+			.column(2, 0px) !important;
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.p-product {
+		.left-column {
+
+			.images {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+
+			.important-info {
+				float: none;
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+
+		.options-content-element {
+			.column(1, 0px) !important;
+		}
+	}
+}
+
+
+.b-footer {
+	@media (max-width: 1024px) {
+		// 3 элемета.
+		.menu .column {
+			clear: both;
+
+			&:first-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@media (max-width: 870px) {
+		.network {
+			clear: both;
+		}
+	}
+
+	@media (max-width: 680px) {
+		.column  {
+			width: 130px;
+
+			.footer-item {
+
+				line-height: 12px;
+			}
+		}
+
+		.made-in {
+			float: left;
+		}
+
+		.menu {
+			float: right;
+			margin: 18px 30px 20px 10px;
+
+		}
+	}
+
+	@media (max-width: 600px) {
+
+		.made-in {
+			display: none;
+		}
+
+		.menu {
+			width: 50%;
+			margin: 18px 0 20px;
+
+			.column {
+				margin: 0 auto !important;
+				float: none;
+			}
+		}
+	}
+
+	@media (max-width: 450px) {
+		.menu {
+			clear: both;
+			width: 100%;
+		}
+		.block-links {
+			width: 100%;
+
+			.logo {
+				margin: 23px auto 0 auto;
+				float: none;
+				display: table;
+			}
+
+			.network {
+				margin: 30px auto 0 auto;
+				float: none;
+				display: table;
+			}
+		}
+	}
+}

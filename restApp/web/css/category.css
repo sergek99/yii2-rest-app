@@ -1,0 +1,19 @@
+.category {
+    cursor: pointer;
+}
+.category-item {
+    padding: 2px;
+}
+
+.list-group-item ul {
+    margin-top: 10px;
+}
+/*
+
+.category-item:hover {
+    background-color: #808080;
+}
+
+.category-item:hover .category {
+    color: #ffffff;
+}*/
