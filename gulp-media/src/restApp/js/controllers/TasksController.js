@@ -334,7 +334,7 @@ rest.controller('rest.controllers.TaskEdit', [
         };
 
         $scope.cancel = function () {
-            $uibModalInstance.close(null);
+            $uibModalInstance.close($scope.task);
         };
 
         $scope.changeUser = function(){
