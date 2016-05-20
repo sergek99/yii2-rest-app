@@ -108,20 +108,24 @@ class TasksController extends AppRestController
         $body = \Yii::$app->request->getRawBody();
         $body = Json::decode($body);
         $task = new Task();
-        $task->attributes = [
-            'name' => $body['task']['name'],
-            'description' => $body['task']['description'],
-            'date_start' => strtotime($body['task']['date_start']),
-            'date_end' => strtotime($body['task']['date_end']),
-            'user_id' => $body['task']['user_id'],
-            'status' => $body['task']['status'],
-            'project_id' => $body['task']['project_id']
-        ];
+
+        $task->name = $body['task']['name'];
+        $task->description = $body['task']['description'];
+        $task->date_start = strtotime($body['task']['date_start']);
+        $task->date_end = strtotime($body['task']['date_end']);
+        $task->user_id = $body['task']['user_id'];
+        $task->status = $body['task']['status'];
+        $task->project_id = $body['task']['project_id'];
+
         if($task->validate()){
             $task->save();
+            $_task = Task::find()
+                ->andWhere(['id'=>$task->id])
+                ->With(['project', 'user'])
+                ->asArray()->one();
             return [
                 'success' => true,
-                'task' => $task
+                'task' => $_task
             ];
         } else {
             return [

@@ -65,7 +65,7 @@ class Task extends ActiveRecord
 
     public function beforeSave($insert)
     {
-        if($this->oldAttributes['user_id'] != $this->user_id){
+        if(!$insert && $this->oldAttributes['user_id'] != $this->user_id){
             $history = new TaskHistory();
             $history->task_id = $this->id;
             $history->comment = $this->comment;
