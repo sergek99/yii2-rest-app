@@ -36,7 +36,8 @@ rest.controller('rest.controllers.LoginController', [
                     if($rootScope.toState == null) {
                         $state.go('index');
                     } else {
-                        $state.go($rootScope.toState, $rootScope.toParams);
+                        $state.go('index');
+                        // $state.go($rootScope.toState, $rootScope.toParams);
                     }
                 }
             });
