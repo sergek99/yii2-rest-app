@@ -28,7 +28,7 @@ class User extends \yii\web\User
     const ACTIVATION_VIA_EMAIL = 'email';
     const ACTIVATION_VIA_SMS = 'sms';
 
-    const EXPIRE_TIME = 24 * 30 * 3600;
+    const EXPIRE_TIME = 2592000;
 
     /**
      * @var \market\components\compare\CompareCollection

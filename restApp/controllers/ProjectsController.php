@@ -132,7 +132,8 @@ class ProjectsController extends AppRestController
         if($project->validate()){
             $project->save();
             return [
-                'success' => true
+                'success' => true,
+                'project' => $project
             ];
         } else {
             return [

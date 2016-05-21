@@ -277,7 +277,7 @@ rest.controller('rest.controllers.NewProject', [
                     $scope.errors = response.errors;
                 }
                 if(response.success){
-                    $uibModalInstance.close($scope.project);
+                    $uibModalInstance.close(response.project);
                 }
             });
         };
